@@ -27,24 +27,24 @@ Cleaning the Table
 
 The grade report is generated through data taken from a school website that doesn’t export in a spreadsheet that is “friendly” with an emailer. The dataframe needs to be cleaned, reformatted for readability. This is done through a function built in python using a jupyter notebook in google colab.
 
-![clean_table](./clean_table.png)
+![clean_table](./images/clean_table.png)
 
 #### This function made the column names go from this format:
-![unclean_cols](./unclean_cols.png)
+![unclean_cols](./images/unclean_cols.png)
 
 #### To this format:
-![clean_cols](./clean_cols.png)
+![clean_cols](./images/clean_cols.png)
 
 
 ### Compiling the Missing Assignments
 
 After the table is cleaned, the data is then reshaped to add a column containing a list of the missing assignments for each student.
-![assign_comp](./assign_comp.png)
+![assign_comp](./images/assign_comp.png)
 
 Here the column “variable” represents their missing assignments. The code above first reshapes the data so that each assignment is aligned with the score. Then, the dataframe is filtered by all assignments that have a grade of 0(meaning it is missing), and then the assignment names are merged together, and that column is merged with the original dataframe.
 
 In addition, a subject for the email is added to the dataframe for when it is transferred.
-![assign_comp2](./assign_comp2.png)
+![assign_comp2](./images/assign_comp2.png)
 
 After the table was prepped, it then was ready to be accessed by the email server to send out. The email was crafted in python with text formatters and the customary information was looped through and extracted from the spreadsheet(as an API) and inserted into each sent email.
 
